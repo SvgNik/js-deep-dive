@@ -1,0 +1,12 @@
+const name = "John";
+console.log(name);
+const age = 30;
+console.log(age);
+const isUserLog = true;
+console.log(isUserLog);
+const address = null;
+console.log(address);
+let role = "admin";
+console.log(role);
+let counter = 0;
+console.log(counter);
