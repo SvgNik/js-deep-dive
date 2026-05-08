@@ -9,7 +9,7 @@ let amount = 0;
 
 for (let i = 0; i < tags.length; i++) {
   if (tags[i] === ',') {
-  amount ++;
- }
+    amount++;
+  }
 }
 console.log(amount);
