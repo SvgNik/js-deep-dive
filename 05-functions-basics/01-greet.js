@@ -4,4 +4,3 @@ function greetUser(name) {
 
 console.log(greetUser('Nik'));
 console.log(greetUser ('Alica'));
-ы
