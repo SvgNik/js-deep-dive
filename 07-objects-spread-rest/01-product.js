@@ -1,19 +1,23 @@
-const product = {
-  title: 'iphone',
-  price: 2500,
-  category: 'phone',
-  available: true,
+const user = {
+  name: 'Nik',
+  age: 26,
+  city: 'Kyiv',
+  isPremium: true,
+
+  greet() {
+    return `Hello, my name is ${user.name}`
+  },
 };
 
-console.log(product.title);
+user.age = 24;
+user.email = 'nikolay123@example.com';
+delete user.isPremium;
 
-const key = 'category';
-console.log(product[key]);
+console.log(user.greet());
 
-product.price = 3200;
+console.log(Object.keys(user));
+console.log(Object.values(user));
 
-product.rating = 4.5;
-
-delete product.available;
-
-console.log(product);
+for (const key in user) {
+  console.log(key + ":", user[key]);
+}
