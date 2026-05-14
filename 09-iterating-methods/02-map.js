@@ -10,5 +10,3 @@ const newProduct = products.map(product => {
 
 console.log(products);
 console.log(newProduct);
-
-//* Используя map, создай новый массив объектов, где у каждого товара цена увеличена на 20% и добавлено свойство currency: "USD".
