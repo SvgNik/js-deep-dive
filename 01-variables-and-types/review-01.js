@@ -1,0 +1,10 @@
+const userName = 'Nik';
+console.log(typeof userName);
+const age = 24;
+console.log(typeof age);
+let isActive = true;
+console.log(typeof isActive);
+let bonus = undefined;
+console.log(typeof bonus);
+const invite = null;
+console.log(typeof invite);
