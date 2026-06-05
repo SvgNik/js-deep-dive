@@ -1,6 +1,6 @@
 class Temperature {
   constructor(celsius) {
-    this._celsius = celsius;
+    this.celsius = celsius;
   }
   get celsius() {
     return this._celsius;
@@ -17,4 +17,3 @@ const normalTemperature = new Temperature(0);
 normalTemperature.celsius = 50;
 normalTemperature.celsius = -350;
 console.log(normalTemperature.celsius);
-
