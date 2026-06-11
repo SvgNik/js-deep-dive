@@ -13,6 +13,4 @@ form.addEventListener("submit", (e) => {
     paragraph.textContent = `Привет, ${name}!`;
     form.reset();
   }
-
-
 });
