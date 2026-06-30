@@ -44,7 +44,7 @@ status.textContent = "...Загрузка";
 fetch("https://jsonplaceholder.typicode.com/users")
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`Ошибка, статус: ${response.status}`);
+      throw new Error(`статус: ${response.status}`);
     }
     return response.json();
   })
@@ -54,7 +54,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
     renderUsers(allUsers);
     renderStats(allUsers);
   })
-  .catch((error) => console.error(error.message));
+  .catch((error) => {
+    status.textContent = `Ошибка: ${error.message}`;
+    console.error(error);
+  });
 
 search.addEventListener("input", (event) => {
   const userInput = event.target.value.toLowerCase();
