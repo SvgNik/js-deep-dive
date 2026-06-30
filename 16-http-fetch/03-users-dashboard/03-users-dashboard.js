@@ -23,6 +23,18 @@ function renderUsers(list) {
   });
 }
 
+function renderStats(list) {
+  const counts = list.reduce((acc, user) => {
+    const letter = user.name[0].toUpperCase();
+    acc[letter] = (acc[letter] || 0) + 1;
+    return acc;
+  }, {});
+  const text = Object.entries(counts)
+    .map(([letter, count]) => `${letter}: ${count}`)
+    .join(", ");
+  stats.textContent = text;
+}
+
 status.textContent = "...Загрузка";
 
 fetch("https://jsonplaceholder.typicode.com/users")
@@ -36,5 +48,15 @@ fetch("https://jsonplaceholder.typicode.com/users")
     status.textContent = "";
     allUsers = users;
     renderUsers(allUsers);
+    renderStats(allUsers);
   })
   .catch((error) => console.error(error.message));
+
+search.addEventListener("input", (event) => {
+  const userInput = event.target.value.toLowerCase();
+  const filtered = allUsers.filter((user) => {
+    const userNameLower = user.name.toLowerCase();
+    return userNameLower.includes(userInput);
+  });
+  renderUsers(filtered);
+});
