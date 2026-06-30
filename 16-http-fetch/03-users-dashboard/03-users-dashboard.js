@@ -7,6 +7,10 @@ let allUsers = [];
 
 function renderUsers(list) {
   usersCard.innerHTML = "";
+  if (list.length === 0) {
+    usersCard.textContent = "Ничего не найдено";
+    return;
+  }
   list.forEach((user) => {
     const card = document.createElement("div");
     const userName = document.createElement("p");
